@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/shaorma-prototype/static/css/main.60485d50.css",
+    "main.js": "/shaorma-prototype/static/js/main.c6f20ed5.js",
+    "index.html": "/shaorma-prototype/index.html",
+    "main.60485d50.css.map": "/shaorma-prototype/static/css/main.60485d50.css.map",
+    "main.c6f20ed5.js.map": "/shaorma-prototype/static/js/main.c6f20ed5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.60485d50.css",
+    "static/js/main.c6f20ed5.js"
+  ]
+}
