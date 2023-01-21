@@ -1,0 +1,10 @@
+.main {
+  margin: 0 50px;
+  
+  &__container {
+    height: 100vh;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: bisque;
+  }
+}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './MainPage.scss';
 
 type Props = {
 
@@ -7,6 +8,10 @@ type Props = {
 export const MainPage: React.FC = () => {
 
   return (
-    <p>MainPage</p>
+    <main className='main'>
+      <div className="main__container">
+        Hello
+      </div>
+    </main>
   );
 };
