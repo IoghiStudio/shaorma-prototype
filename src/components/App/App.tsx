@@ -5,10 +5,24 @@ import { Header } from '../Header';
 
 import './App.scss';
 
+export type Account = {
+  username: string;
+  email: string;
+}
+
 
 export function App() {
-  const [signedIn, setSignedIn] = useState(false);
+  const [signedIn, setSignedIn] = useState(true);
+  const [account, setAccount] = useState({
+    username: '',
+    email: '',
+  });
+
   
+  const signIn = (acc: Account) => {
+    setAccount(acc);
+    setSignedIn(true);
+  }
 
   return (
     <div>
@@ -17,12 +31,11 @@ export function App() {
       >
         LOG/OUT
       </button>
-      <Header isLoggedIn={signedIn} />
 
+      <Header isLoggedIn={signedIn} account={account} />
 
-      {/* Meniu */}
       {!signedIn ? (
-        <SignForm />
+        <SignForm signIn={signIn} />
         ) : (
         <MainPage />
       )}

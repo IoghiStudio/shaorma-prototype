@@ -1,11 +1,16 @@
 import { useState } from 'react';
+import { Account } from '../App';
 import './SignForm.scss';
 
 type Props = {
-
+  signIn: (acc: Account) => void;
 }
 
-export const SignForm: React.FC = () => {
+export const SignForm: React.FC<Props> = ({
+  signIn
+}) => {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
 
   return (
     <form
@@ -13,7 +18,13 @@ export const SignForm: React.FC = () => {
       onSubmit={(event) => {
         event.preventDefault();
 
+        if (username.length && email.length) {
+          signIn({
+            username,
+            email,
+          })
       }}
+    }
     >
 
       <h1
@@ -25,14 +36,28 @@ export const SignForm: React.FC = () => {
       <label htmlFor="username">
         Username: 
       </label>
-      <input type="text" />
+      <input
+        id='username'
+        type="text"
+        value={username}
+        onChange={(event) => {
+          setUsername(event.target.value);
+        }}
+      />
 
       <br />
 
       <label htmlFor="email">
         Email: 
       </label>
-      <input type="text" />
+      <input
+        id='email'
+        type="text"
+        value={email}
+        onChange={(event) => {
+          setEmail(event.target.value);
+        }}
+      />
 
       <br />
 
